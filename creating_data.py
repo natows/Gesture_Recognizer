@@ -38,6 +38,12 @@ while True:
         label = "V"
     elif key == ord('4'):
         label = 'ok'
+    elif key == ord('5'):
+        label = 'thumb'
+    elif key == ord('6'):
+        label = 'fist'
+    elif key == ord('7'):
+        label = 'rock'
     elif key == ord('q'):
         break
     if label:

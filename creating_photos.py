@@ -23,7 +23,6 @@ while True:
     if not ret:
         break
 
-    # Przetwarzanie MediaPipe
     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     result = hands.process(frame_rgb)
     
@@ -33,7 +32,6 @@ while True:
         for hand_landmarks in result.multi_hand_landmarks:
             hand_detected = True
             
-            # Oblicz bounding box dłoni
             h, w, _ = frame.shape
             x_coords = [lm.x for lm in hand_landmarks.landmark]
             y_coords = [lm.y for lm in hand_landmarks.landmark]
@@ -43,16 +41,12 @@ while True:
             ymin = max(int(min(y_coords) * h) - 20, 0)
             ymax = min(int(max(y_coords) * h) + 20, h)
             
-            # Narysuj bounding box
             cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), (0, 255, 0), 2)
             
-            # Narysuj landmarks
             mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
             
-            # Przechowaj współrzędne dla zapisania
             hand_bbox = (xmin, ymin, xmax, ymax)
 
-    # Status na ekranie
     status_color = (0, 255, 0) if hand_detected else (0, 0, 255)
     status_text = f"Dłoń: {'WYKRYTA' if hand_detected else 'BRAK'}"
     cv2.putText(frame, status_text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, status_color, 2)
@@ -63,18 +57,15 @@ while True:
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord('s') and hand_detected:
-        # Wytnij dłoń z obrazu
         xmin, ymin, xmax, ymax = hand_bbox
         hand_img = frame[ymin:ymax, xmin:xmax]
         
         if hand_img.size > 0:
-            # Przetwórz jak w modelu CNN
             hand_img = cv2.resize(hand_img, (64, 64))
             hand_img_rgb = cv2.cvtColor(hand_img, cv2.COLOR_BGR2RGB)
             
-            # Zapisz w formacie BGR dla cv2.imwrite
             img_path = os.path.join(output_dir, f"{gesture_name}_{img_count:04d}.jpg")
-            cv2.imwrite(img_path, hand_img)  # zapisz w BGR
+            cv2.imwrite(img_path, hand_img) 
             
             print(f"[✓] Zapisano: {img_path} (rozmiar: {hand_img.shape})")
             img_count += 1
