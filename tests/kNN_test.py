@@ -51,7 +51,9 @@ while True:
             pyautogui.press('volumeup')
             last_action_time = current_time
         elif prediction == "ok" and (prediction != last_gesture or current_time - last_action_time > action_cooldown):
-            exit()
+            pyautogui.press('volumemute')
+            last_action_time = current_time
+
         elif prediction == "palm" and (prediction != last_gesture or current_time - last_action_time > action_cooldown):
             pyautogui.press('volumedown')
             last_action_time = current_time

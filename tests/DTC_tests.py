@@ -15,7 +15,7 @@ action_cooldown = 1.0
 
  
 
-with open('../models/DTC/DTC.pkl', 'rb') as f:
+with open('../models/DTC/DTC_extended.pkl', 'rb') as f:
     model = pickle.load(f)
 
 

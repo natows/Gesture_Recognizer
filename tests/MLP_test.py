@@ -43,20 +43,20 @@ while True:
         cv2.putText(frame, f'Gesture: {prediction}', (10, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         
-        current_time = time.time()
-        if prediction == "V" and (prediction != last_gesture or current_time - last_action_time > action_cooldown):
-            pyautogui.press('space')
-            last_action_time = current_time
-        elif prediction == "L" and (prediction != last_gesture or current_time - last_action_time > action_cooldown):
-            pyautogui.press('volumeup')
-            last_action_time = current_time
-        elif prediction == "ok" and (prediction != last_gesture or current_time - last_action_time > action_cooldown):
-            exit()
-        elif prediction == "palm" and (prediction != last_gesture or current_time - last_action_time > action_cooldown):
-            pyautogui.press('volumedown')
-            last_action_time = current_time
+        # current_time = time.time()
+        # if prediction == "V" and (prediction != last_gesture or current_time - last_action_time > action_cooldown):
+        #     pyautogui.press('space')
+        #     last_action_time = current_time
+        # elif prediction == "L" and (prediction != last_gesture or current_time - last_action_time > action_cooldown):
+        #     pyautogui.press('volumeup')
+        #     last_action_time = current_time
+        # elif prediction == "ok" and (prediction != last_gesture or current_time - last_action_time > action_cooldown):
+        #     exit()
+        # elif prediction == "palm" and (prediction != last_gesture or current_time - last_action_time > action_cooldown):
+        #     pyautogui.press('volumedown')
+        #     last_action_time = current_time
 
-        last_gesture = prediction
+        # last_gesture = prediction
 
         
 
