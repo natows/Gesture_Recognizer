@@ -5,8 +5,8 @@ from tensorflow.keras.models import load_model
 import tensorflow as tf
 import pickle, time, pyautogui
 
-model = load_model('../models/MobileNetV2/mobilenetv2_model.keras')
-with open('../models/MobileNetV2/label_encoder_mobilenet.pkl', 'rb') as f:
+model = load_model('../models/MobileNetV2/mobilenetv2_extended_model.keras')
+with open('../models/MobileNetV2/extended_label_encoder_mobilenet.pkl', 'rb') as f:
     label_encoder = pickle.load(f)
 
 mp_hands = mp.solutions.hands
