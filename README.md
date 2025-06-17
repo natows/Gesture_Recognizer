@@ -273,6 +273,10 @@ Dataset zdjęć ./dataset/ powiększono z 400 zdjęć na każdy gest do 650 zdj�
 
 
 #### Decision Tree Classifier
+
+Fragment drzewa decyzyjnego:
+![Drzewo decyzyjne](./classifiers/DTC/decision_tree_graphviz.png)
+
  - Accuracy: 0.9917184265010351
 - Cross-validation scores: [0.97670807 0.96583851 0.99688958 0.98911353 0.93623639]
 Classification Report:
