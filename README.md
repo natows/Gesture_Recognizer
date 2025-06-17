@@ -45,6 +45,7 @@ Tak wysoka dokładność wynika prawdopodobnie z czystości danych.
 - Model osiąga test accuracy 99%
 - Wyniki cross-validation: [0.98058252 0.98701299 0.99675325 0.98376623 0.96103896]. Tu również bez wachań między foldami.
 - Classification report:
+```
               precision    recall  f1-score   support
 
            L       1.00      1.00      1.00       142
@@ -55,7 +56,7 @@ Tak wysoka dokładność wynika prawdopodobnie z czystości danych.
     accuracy                           1.00       555
    macro avg       1.00      1.00      1.00       555
 weighted avg       1.00      1.00      1.00       555
-
+```
 - W praktyce model jest praktycznie bezbłędny, na 20 testowych prób rozpoznał poprawnie wszystkie 4 gesty !!
 ![Macierz pomyłek DTC](./classifiers/DTC/dtc_confusion_matrix.png)
 
