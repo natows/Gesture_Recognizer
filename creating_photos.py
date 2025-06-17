@@ -2,7 +2,7 @@ import cv2
 import os
 import mediapipe as mp
 
-gesture_name = "fist"         
+gesture_name = "rock"         
 output_dir = f"./dataset/{gesture_name}"
 os.makedirs(output_dir, exist_ok=True)
 
@@ -67,13 +67,13 @@ while True:
             img_path = os.path.join(output_dir, f"{gesture_name}_{img_count:04d}.jpg")
             cv2.imwrite(img_path, hand_img) 
             
-            print(f"[✓] Zapisano: {img_path} (rozmiar: {hand_img.shape})")
+            print(f" Zapisano: {img_path} (rozmiar: {hand_img.shape})")
             img_count += 1
         else:
-            print("❌ Błąd wycinania dłoni")
+            print("Błąd wycinania dłoni")
             
     elif key == ord('s') and not hand_detected:
-        print("❌ Nie wykryto dłoni - nie zapisano")
+        print("Nie wykryto dłoni - nie zapisano")
         
     elif key == ord('q'):
         break
@@ -81,5 +81,5 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 
-print(f"\n📊 Zebrano {img_count} zdjęć gestu '{gesture_name}'")
-print("💡 Zmień 'gesture_name' i uruchom ponownie dla innych gestów")
+print(f"\n Zebrano {img_count} zdjęć gestu '{gesture_name}'")
+print(" Zmień 'gesture_name' i uruchom ponownie dla innych gestów")

@@ -57,9 +57,9 @@ while True:
                     writer = csv.writer(f)
                     writer.writerow(row)
 
-                print(f"[✓] Zapisano gest '{label}'")
+                print(f"Zapisano gest '{label}'")
         else:
-            print("❗ Nie wykryto dłoni, nie zapisano.")
+            print(" ! Nie wykryto dłoni, nie zapisano.")
 
 cap.release()
 cv2.destroyAllWindows()

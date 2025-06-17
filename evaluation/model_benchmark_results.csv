@@ -1,0 +1,8 @@
+Model,Test Accuracy (%),Inference Time (ms),Memory Usage (MB),Practical Test
+kNN,99.0,35.233 ± 2.08,78.8,18/20 ✓
+DTC,99.2,0.214 ± 0.066,1.24,20/20 ✓✓✓
+Naive Bayes,97.8,0.355 ± 0.138,0.07,13/20
+MLP,99.8,0.174 ± 0.07,0.16,17/20 ✓
+CNN,99.6,107.661 ± 14.883,47.28,10/20 ✓✓
+MobileNetV2,99.9,135.774 ± 14.854,51.83,15/20 ✓
+LSTM,98.4,108.9 ± 17.311,4.04,Overfitted

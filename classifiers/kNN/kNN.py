@@ -23,7 +23,7 @@ disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=knn.classes_)
 disp.plot(cmap='Blues', xticks_rotation='vertical')
 plt.title("Macierz pomyłek kNN")
 # plt.show()
-plt.savefig("knn_confusion_matrix.png")
+plt.savefig("knn_extended_confusion_matrix.png")
 
 print("Classification Report:")
 print(classification_report(y_test, y_pred))
@@ -48,7 +48,7 @@ print("Wyniki cross-validation:", scores)
 print("Średnia dokładność:", np.mean(scores))
 
 
-with open('../../models/kNN/kNN2.pkl', 'wb') as f:
+with open('../../models/kNN/kNN_extended.pkl', 'wb') as f:
     pickle.dump(knn, f)
 print("Model zapisany do 'model.pkl'")
 

@@ -247,7 +247,7 @@ def visualize_results(history, label_encoder, test_pred_classes, y_test_enc, cm)
     plt.ylabel('Actual')
     
     plt.tight_layout()
-    plt.savefig('../classifiers/MobileNetV2/mobilenetv2_extended_results.png', dpi=300, bbox_inches='tight')
+    plt.savefig('./mobilenetv2_extended_results.png', dpi=300, bbox_inches='tight')
     plt.show()
 
 
@@ -262,9 +262,9 @@ if __name__ == "__main__":
     
     model, label_encoder, history, X_test, y_test_enc, test_pred_classes, cm = result
     
-    os.makedirs('../models/MobileNetV2', exist_ok=True)
-    model.save('../models/MobileNetV2/mobilenetv2_extended_model.keras')
-    with open('../models/MobileNetV2/extended_label_encoder_mobilenet.pkl', 'wb') as f:
+    os.makedirs('../../models/MobileNetV2', exist_ok=True)
+    model.save('../../models/MobileNetV2/mobilenetv2_extended_model.keras')
+    with open('../../models/MobileNetV2/extended_label_encoder_mobilenet.pkl', 'wb') as f:
         pickle.dump(label_encoder, f)
     
     print("Model MobileNetV2 został zapisany!")
