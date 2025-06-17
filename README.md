@@ -88,7 +88,7 @@ weighted avg       0.99      0.99      0.99       557
 - **Warstwa ukryta 2:** 50 neuronów + ReLU  
 - **Warstwa wyjściowa:** 4 neurony + Softmax
 - **Iteracje:** 500
-- **Solver:** Adam - najlepiej się sprawdza
+- **Solver:** Adam 
 
 - Sieć neuronowa osiąga accuracy 99,8%
 - Wyniki cross walidacji: [0.98058252 1.         0.99675325 1.         0.99675325], brak przeuczenia
